@@ -37,7 +37,7 @@ if __name__ == "__main__":
 uv run main.py
 
 # edited app.py
-om fastapi import FastAPI
+from fastapi import FastAPI
 
 app = FastAPI()
 
@@ -50,4 +50,81 @@ def get_all_posts():
 # open the FASTAPI URL
 http://localhost:8000/docs
 ```
+
+## Lesson 1: Introduction
+[intro_script](lesson1\intro.py)
+
+* update [main.py](main.py) ---> ```uvicorn.run('lesson1.intro:app', host='0.0.0.0', port=8000, reload=True)```
+
+```bash
+uv run main.py          # or python main.py
+``` 
+
+## Lesson 2: Build Modern Restful APIs
+
+[books_script](lesson2\books.py)
+
+* update [main.py](main.py) --> ```uvicorn.run('lesson2.books:app', host='0.0.0.0', port=8000, reload=True)``` 
+
+```bash
+uv run main.py          # or python main.py
+``` 
+
+## Lesson 3: Connect FastAPI to a SQLite Database
+
+[database_script](lesson3_sqlite\database.py)
+
+[models.py](lesson3_sqlite\models.py)
+
+[books_script](lesson3_sqlite\books.py)
+
+* update [main.py](main.py) --> ```uvicorn.run('lesson3.books:app', host='0.0.0.0', port=8000, reload=True)``` 
+
+```bash
+uv run main.py          # or python main.py
+``` 
+
+## Lesson 4: Connect FastAPI to a NoSQL Database (MongoDB)
+
+[https://www.mongodb.com/cloud/atlas/register](MongoDB Sign up) --> Cloud NoSql Database
+* Watch Lecture video for more tutorial
+
+## Lesson 5: Build a FastAPI app with PostgreSQL Relational Database (Creating a Question Answer Database)
+
+* Watch Lecture video for more tutorial
+
+```bash
+uv add psycopg2-binary
+
+# Install pgAdmin on root dir
+uv pip install pgadmin4
+
+# run this in working and input any email and password
+pgadmin4
+```
+* Note: you should get the below when you start pgadmin4 
+```Email address: admin@admin.com or any email```
+```Password: <any pasword> ```
+```Retype password:```
+```Starting pgAdmin 4. Please navigate to http://127.0.0.1:5050 in your browser.```
+ * Serving Flask app 'pgadmin'
+ * Debug mode: off
+
+* Note: if above pgadmin4 does not work, try using a ```docker-compose.yaml``` file to start both ```pgadmin``` and ```postgres``` containers.
+
+[quiz_script](lesson5_PostgreSQL\quiz.py)
+[database_script](lesson5_PostgreSQL\database.py)
+[model_script](lesson5_PostgreSQL\models.py)    # Sqlalchemy Operation Relational Mapping (ORM) to connect to PostgreSQL database and fetch data.
+
+
+* update [main.py](main.py) --> ```uvicorn.run('lesson5.quiz:app', host='0.0.0.0', port=8000, reload=True)``` 
+
+```bash
+uv run main.py          # or python main.py
+``` 
+* open Pgadmin to see created tables
+
+## Lesson 6: FastAPI app with MySQL Relational Database (watch Video for more tutorial)
+
+## Lesson 7: React + FastAPI
 
